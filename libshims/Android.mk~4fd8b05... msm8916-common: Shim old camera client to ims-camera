@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,36 +17,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := \
-    flp/flp.c
-
-LOCAL_MODULE := libshims_flp
-LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    get_process_name/get_process_name.c
-
-LOCAL_MODULE := libshims_get_process_name
-LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := MediaBuffer.cpp
-LOCAL_SHARED_LIBRARIES := libstagefright_foundation libui libgui
-LOCAL_CFLAGS := -Wno-unused-private-field
-LOCAL_MODULE := libshims_ims
-LOCAL_MODULE_TAGS := optional
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
+LOCAL_SRC_FILES:= \
 	camera/Camera.cpp \
 	camera/CameraMetadata.cpp \
 	camera/CaptureResult.cpp \
@@ -82,6 +53,6 @@ LOCAL_C_INCLUDES += \
 	system/media/camera/include \
 	system/media/private/camera/include
 
-LOCAL_MODULE := libshims_camera
+LOCAL_MODULE:= libshims_camera
 
 include $(BUILD_SHARED_LIBRARY)

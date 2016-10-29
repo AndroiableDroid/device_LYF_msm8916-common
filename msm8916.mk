@@ -84,7 +84,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshims_get_process_name \
     libshims_flp \
-    libshims_ims
+    libshims_ims \
+    libshims_camera
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \

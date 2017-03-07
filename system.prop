@@ -61,5 +61,8 @@ ro.telephony.call_ring.multiple=false
 persist.dbg.ims_volte_enable=1
 persist.dbg.volte_avail_ovr=1
 
-# Wi-Fi
+# Timeout failed shutdowns
+ro.build.shutdown_timeout=5
+
+# WiFi
 wifi.interface=wlan0

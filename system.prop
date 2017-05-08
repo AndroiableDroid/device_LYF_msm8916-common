@@ -27,6 +27,7 @@ persist.hwc.mdpcomp.enable=true
 persist.hwc.ptor.enable=true
 debug.enable.sglscale=1
 debug.sf.recomputecrop=0
+debug.sf.disable_backpressure=1
 
 # Media
 drm.service.enabled=1

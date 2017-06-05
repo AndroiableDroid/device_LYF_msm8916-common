@@ -1,4 +1,4 @@
-# Copyright (c) 2009-2012, 2014, The Linux Foundation. All rights reserved.
+# Copyright (c) 2009-2012, 2014-2017, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -51,6 +51,9 @@ on fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
+    mkdir /data/vendor 0770 system system
+    mkdir /data/vendor/misc 0770 system system
+
     mkdir /data/fdAlbum 0770 camera camera
     mkdir /data/misc/camera 0770 camera camera
 
@@ -76,8 +79,11 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
 
     # Create directory used by audio subsystem
-    mkdir /data/misc/audio 0770 audio audio
-    restorecon_recursive /data/misc/audio
+    mkdir /data/vendor/misc/audio 0770 audio audio
+
+    # Create directory for audio delta files
+    mkdir /data/vendor/misc/audio/acdbdata 0770 media audio
+    mkdir /data/vendor/misc/audio/acdbdata/delta 0770 media audio
 
     # Create directories for Location services
     mkdir /data/misc/location 0770 gps gps
@@ -96,6 +102,11 @@ on post-fs-data
     restorecon_recursive /data/time
 
     mkdir /data/audio/ 0770 media audio
+    mkdir /data/vendor/audio/ 0770 media audio
+
+    # Create a folder for audio delta files
+    mkdir /data/vendor/audio/acdbdata 0770 media audio
+    mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
 
     setprop vold.post_fs_data_done 1
 

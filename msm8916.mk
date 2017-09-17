@@ -249,5 +249,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
+# USB HAL
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.cyanogen_8916
+
 # inherit from the proprietary version
 $(call inherit-product, vendor/LYF/msm8916-common/msm8916-common-vendor.mk)

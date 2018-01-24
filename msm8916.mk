@@ -218,6 +218,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+# TextClassifier smart selection model
+PRODUCT_PACKAGES += \
+    textclassifier.smartselection.bundle1
+
+# Telephony
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic

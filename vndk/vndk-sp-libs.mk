@@ -26,3 +26,8 @@ VNDK_SP_LIBRARIES := \
     libpng \
     libunwind \
     libutils \
+
+EXTRA_VENDOR_LIBRARIES := \
+    libui \
+    android.hardware.configstore@1.0 \
+    android.hardware.configstore-utils

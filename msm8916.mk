@@ -198,6 +198,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 endif
 
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \

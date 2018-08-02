@@ -1,14 +1,11 @@
 [AID_VENDOR_QTI_DIAG]
 value:2901
 
-[AID_VENDOR_QCOM_DIAG]
-value:2950
-
 [AID_VENDOR_RFS]
-value:2951
+value:2903
 
 [AID_VENDOR_RFS_SHARED]
-value:2952
+value:2904
 
 [vendor/bin/cnd]
 mode: 0755

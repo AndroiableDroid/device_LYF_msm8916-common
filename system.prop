@@ -33,6 +33,7 @@ debug.cpurend.vsync=false
 
 # Media
 drm.service.enabled=1
+vendor.mediacodec.binder.size=6
 vidc.enc.narrow.searchrange=1
 
 # Memory optimizations

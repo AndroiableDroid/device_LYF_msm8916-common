@@ -399,6 +399,15 @@ service qti /system/vendor/bin/qti
     writepid /dev/cpuset/system-background/tasks
     disabled
 
+service atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+    disabled
+
+on property:persist.radio.atfwd.start=true
+    start atfwd
+
 service qcom-sh /system/vendor/bin/init.qcom.sh
     class late_start
     user root

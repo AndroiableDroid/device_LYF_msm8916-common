@@ -89,6 +89,8 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/vendor/bin/mm-qcamera-daemon=23
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024

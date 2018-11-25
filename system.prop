@@ -58,6 +58,3 @@ persist.dbg.volte_avail_ovr=1
 
 # Wi-Fi
 wifi.interface=wlan0
-
-# Wi-Fi display
-persist.debug.wfd.enable=1

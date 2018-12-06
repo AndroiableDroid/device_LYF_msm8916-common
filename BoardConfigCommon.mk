@@ -91,6 +91,9 @@ TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/vendor/bin/mm-qcamera-daemon=23
 
+# CNE
+BOARD_USES_QCNE := true
+
 # Dex optimizion
 ifeq ($(HOST_OS),linux)
  ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -159,6 +162,9 @@ DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
+# Peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
 # Power
 ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(PLATFORM_PATH)/power/power_ext.c
@@ -180,6 +186,7 @@ BOARD_USES_QCOM_HARDWARE := true
 # Radio
 MALLOC_SVELTE := true
 TARGET_RIL_VARIANT := caf
+PROTOBUF_SUPPORTED := true
 
 # Recovery
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cm
@@ -194,10 +201,10 @@ BOARD_SEPOLICY_DIRS += \
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib64/libflp.so|libshims_flp.so \
-    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
-    /system/vendor/lib/libflp.so|libshims_flp.so \
-    /system/vendor/lib/libizat_core.so|libshims_get_process_name.so
+    /system/lib64/lib-imsvideocodec.so|libshim_ims.so
+
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true

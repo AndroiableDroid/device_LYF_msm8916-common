@@ -108,6 +108,11 @@ PRODUCT_PACKAGES += \
     libshim_boringssl \
     libshims_camera
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    libshim_ims
+
 # Init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -199,6 +204,15 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 endif
 
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0 \
+    android.system.net.netd@1.0
+
+PRODUCT_PACKAGES += \
+   libandroid_net \
+   libandroid_net_32
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
@@ -207,6 +221,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
+    libtinyxml \
     libxml2
 
 # Recovery
@@ -232,7 +247,7 @@ PRODUCT_PACKAGES += \
     textclassifier.smartselection.bundle1
 
 # Telephony
-PRODUCT_PACKAGES += qti-telephony-common
+PRODUCT_PACKAGES += telephony-ext ims-ext-common
 PRODUCT_BOOT_JARS += telephony-ext
 
 # USB
@@ -249,6 +264,11 @@ PRODUCT_PACKAGES += \
     libwcnss_qmi \
     wcnss_service \
     libwpa_client
+
+# Whitelisted apps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 PRODUCT_PACKAGES += \
     hostapd \

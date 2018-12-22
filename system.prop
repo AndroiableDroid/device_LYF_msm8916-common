@@ -31,6 +31,9 @@ debug.enable.sglscale=1
 drm.service.enabled=1
 vidc.enc.narrow.searchrange=1
 
+# Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Perf
 ro.vendor.qti.sys.fw.use_trim_settings=true
 ro.vendor.qti.sys.fw.empty_app_percent=50

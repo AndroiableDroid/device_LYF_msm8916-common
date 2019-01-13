@@ -150,11 +150,6 @@ on post-fs-data
     chown radio radio /data/vendor/radio/copy_complete
     chmod 0660 /data/vendor/radio/copy_complete
 
-    # copy prebuilt qcril.db files always
-    copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
-    chown radio radio /data/vendor/radio/qcril_prebuilt.db
-    chmod 0660 /data/vendor/radio/qcril_prebuilt.db
-
     # File flags for prebuilt ril db file
     write /data/vendor/radio/prebuilt_db_support 1
     chown radio radio /data/vendor/radio/prebuilt_db_support
@@ -162,6 +157,9 @@ on post-fs-data
     write /data/vendor/radio/db_check_done 0
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
+
+    # Copy prebuilt qcril.db files always
+    trigger copy_qcril_db
 
     # Create directory used for dump collection
     mkdir /data/vendor/ssrdump 0770 root system
@@ -464,6 +462,21 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
     user radio
     group radio cache inet misc audio sdcard_r sdcard_rw oem_2950 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
+
+on copy_qcril_db
+    copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
+    chown radio radio /data/vendor/radio/qcril.db
+    write /data/vendor/radio/db_check_done 1
+
+on property:sys.uicc.activate.timeout=1
+    trigger copy_qcril_db
+    restart ril-daemon
+    setprop sys.uicc.activate.timeout 0
+
+on property:sys.uicc.activate.timeout=2
+    trigger copy_qcril_db
+    restart ril-daemon2
+    setprop sys.uicc.activate.timeout 0
 
 service charger /charger
     class charger

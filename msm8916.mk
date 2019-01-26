@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     libgenlock \
     libtinyxml \
-    memtrack.msm8916
+    memtrack.msm8916 \
+    libqdMetaData.system
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \

@@ -4,6 +4,10 @@ vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
 
+# APTX
+lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so
+lib64/libaptX_encoder.so:vendor/lib64/libaptX_encoder.so
+
 # Audio
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -181,13 +185,13 @@ vendor/lib64/libxml.so
 vendor/lib/libmdmdetect.so
 
 # Radio - IMS
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
-etc/permissions/imscm.xml
-etc/permissions/qti_permissions.xml
--framework/imscmlibrary.jar
+bin/imscmservice:vendor/bin/imscmservice
+bin/imsdatadaemon:vendor/bin/imsdatadaemon
+bin/imsqmidaemon:vendor/bin/imsqmidaemon
+bin/ims_rtp_daemon:vendor/bin/ims_rtp_daemon
+etc/permissions/imscm.xml:vendor/etc/permissions/imscm.xml
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
+-framework/imscmlibrary.jar:vendor/framework/imscmlibrary.jar
 -vendor/app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
 vendor/lib64/lib-dplmedia.so
@@ -214,19 +218,24 @@ vendor/lib64/lib-rtpsl.so
 vendor/lib64/libvoice-svc.so
 vendor/lib64/libvcel.so
 
-# Thermal
-vendor/bin/thermal-engine|c65885807bf05e5d7e94e90f62b3336b33c50d6b
-vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
-vendor/lib/libthermalclient.so
+# Thermal - from TA-1000 - OPR1.170623.026
+vendor/bin/thermal-engine|e8adca1cf42c7328e03050b8776ba87a183b5dce
+vendor/lib/libthermalclient.so|6096637d37150d89caf3c730c9964ac07797fa55
+vendor/lib64/libthermalclient.so|9beae9671d80ee9b1d47689ed32b5780a863cb77
+vendor/lib64/libthermalioctl.so|ca2dca5f433073df781073f449fd7ed73a4e4d3c
 
-# Time services
--app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
-bin/time_daemon:vendor/bin/time_daemon
--vendor/lib64/libtime_genoff.so
-vendor/lib64/libTimeService.so
--vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
+# Time services - from bardock-pro - OPM1.171019.011
+-vendor/app/TimeService/TimeService.apk|5055619766db32fe499cda86b892c9f3081219c5
+vendor/bin/time_daemon|8ea7d65a65c1d50afc6553ad52848b454c62563d
+-vendor/lib64/libtime_genoff.so|7683a85cae9f17cd535e8960fceda1d6831074a0
+
+# TUI - from vivo 1724 - OPM1.171019.011
+lib/vendor.qti.hardware.tui_comm@1.0.so|b5460afc3e3c6b0f39dfdef6b49a39f537ffa89a
+lib64/vendor.qti.hardware.tui_comm@1.0.so|c627988a2f7a9e05cb5e573e0b70551aa300995f
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|86da521db0433035667beb1ab50c0448e9e6d4e2
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|67007d86dc6d7bb00b069b07351054250a09fc63
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so|cd312ae34506ce67444518b676d1568a12eb80bd
 
 # Signed Venus (media) firmware
 etc/firmware/venus.b00:vendor/firmware/venus.b00
@@ -237,5 +246,7 @@ etc/firmware/venus.b04:vendor/firmware/venus.b04
 etc/firmware/venus.mbn:vendor/firmware/venus.mbn
 etc/firmware/venus.mdt:vendor/firmware/venus.mdt
 
-# Widevine - from angler - OPR6.170623.017 factory image
-vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+# Widevine DRM - from marlin - OPM1.171019.011
+vendor/bin/hw/android.hardware.drm@1.0-service.widevine|62dbed3b465a6abe33d03dd66cf89f3227766850
+vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78ee11ca83614c0cd2e6daa5
+vendor/lib/libwvhidl.so|88ebba6280bd85e5bfea18efe2f685b0e1fb6f50

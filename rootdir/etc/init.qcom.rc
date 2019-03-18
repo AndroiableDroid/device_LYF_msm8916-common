@@ -145,6 +145,17 @@ on boot
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    # Create the directories used by CnE subsystem
+    mkdir /data/connectivity 0771 system system
+    chown system system /data/connectivity
+
+    # Create the directories used by DPM subsystem
+    mkdir /data/dpm 0771 system system
+    chown system system /data/dpm
+
+    mkdir /data/dpm/nsrm 0771 system system
+    chown system system /data/dpm/nsrm
+
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
     # For bridgemgr daemon to inform the USB driver of the correct transport
@@ -216,6 +227,19 @@ on property:bluetooth.isEnabled=true
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
+
+service cnd /vendor/bin/cnd
+    class main
+    socket cnd stream 660 root inet
+    writepid /dev/cpuset/system-background/tasks
+
+service dpmd /vendor/bin/dpmd
+    class late_start
+    socket dpmd stream 660 root system
+    socket tcm stream 660 root inet
+    socket dpmwrapper stream 660 root inet
+    group system readproc inet
+    writepid /dev/cpuset/system-background/tasks
 
 service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class main

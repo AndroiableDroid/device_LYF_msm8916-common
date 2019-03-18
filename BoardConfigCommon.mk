@@ -166,6 +166,7 @@ BOARD_SEPOLICY_DIRS += \
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib64/lib-imsdpl.so|libshim_boringssl.so \
     /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
     /system/vendor/lib64/lib-imscamera.so|libshims_camera.so
 

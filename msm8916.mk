@@ -97,9 +97,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 PRODUCT_PACKAGES += \
-    libshims_get_process_name \
-    libshims_flp \
     libshims_ims \
+    libshim_boringssl \
     libshims_camera
 
 PRODUCT_PACKAGES += \

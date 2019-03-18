@@ -65,3 +65,38 @@ LOCAL_C_INCLUDES += \
 LOCAL_MODULE := libshims_camera
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := parcel/parcel.cpp
+LOCAL_SHARED_LIBRARIES := libbinder
+LOCAL_MODULE := libshim_parcel
+LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+	boringssl/bio_b64.c \
+	boringssl/cipher.c \
+	boringssl/p_dec.c \
+	boringssl/p_enc.c \
+	boringssl/p_open.c \
+	boringssl/p_seal.c \
+	boringssl/rsa_pss.c \
+	boringssl/e_des.c \
+	boringssl/cleanup.c \
+	boringssl/ctrl.c \
+
+LOCAL_CFLAGS += -std=c99
+LOCAL_C_INCLUDES := boringssl
+LOCAL_SHARED_LIBRARIES := libcrypto liblog 
+LOCAL_MODULE := libshim_boringssl
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)

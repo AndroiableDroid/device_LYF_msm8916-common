@@ -80,6 +80,12 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0-java
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8916

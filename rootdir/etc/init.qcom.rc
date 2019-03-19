@@ -77,6 +77,20 @@ on post-fs-data
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
 
+    # Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+
+    # Create the directories used by CnE subsystem
+    mkdir /data/connectivity 0771 system system
+    chown system system /data/connectivity
+
+    # Create the directories used by DPM subsystem
+    mkdir /data/dpm 0771 system system
+    chown system system /data/dpm
+
+    mkdir /data/dpm/nsrm 0771 system system
+    chown system system /data/dpm/nsrm
+
     # Create directory used by audio subsystem
     mkdir /data/vendor/misc/audio 0770 audio audio
 
@@ -100,7 +114,6 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
     restorecon_recursive /data/time
 
-    mkdir /data/audio/ 0770 media audio
     mkdir /data/vendor/audio/ 0770 media audio
 
     # Create a folder for audio delta files
@@ -117,8 +130,10 @@ on post-fs-data
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
-
+    # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
+    write /sys/kernel/boot_slpi/boot 1
+    chown root audio /sys/kernel/boot_adsp/boot
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -165,20 +180,6 @@ on boot
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-
-    # Create NETMGR daemon socket area
-    mkdir /dev/socket/netmgr 0750 radio radio
-
-    # Create the directories used by CnE subsystem
-    mkdir /data/connectivity 0771 system system
-    chown system system /data/connectivity
-
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 

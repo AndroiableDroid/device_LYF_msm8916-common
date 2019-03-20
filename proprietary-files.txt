@@ -1,63 +1,29 @@
-# ADSP - from tissot - OPR1.170623.026
-vendor/bin/adsprpcd|35b15f3197e193f742cef0c9f51bbfba9f7e27ad
-vendor/lib/libadsprpc.so|903160c2bf36fd3155720048c3ae2ab5e7fea7b4
-vendor/lib/libadsp_default_listener.so|3b56c2d00bef6585b8de11ba5afbec3772456d2d
-vendor/lib/libfastcvadsp_stub.so|6197157dec6a29931f3af47b1ade006a295d05f5
-vendor/lib/libfastcvopt.so|1eae508500eb3e8bb3e97617a196d054d9d4f11c
-vendor/lib64/libadsprpc.so|88a4f07391e70f9b83a0aae90d087afbe64ecfa5
-vendor/lib64/libadsp_default_listener.so|7ae782755ddc945edb22ae11e964e0118a3b01a9
-vendor/lib64/libfastcvadsp_stub.so|3d175f68145aa59aecd8457d608df15a5156897e
-vendor/lib64/libfastcvopt.so|5c0c7331eb2836ed1791cdefaef20cb66df02cb5
-
-# ADSP modules - from tissot - OPR1.170623.026
-vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|3e9c52069ff07e50191d3b3afb33b30409241ab6
-vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
-vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so|02b69c54437fb5a6f7ad88c3f58e7c4adfea9ede
-vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|f4d8675a46c5e52add8f8e90e35b29cd33ac582b
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so|b9f68e320d24e9c51871a2056e1f47239bd1cb40
+# ADSP
+bin/adsprpcd:vendor/bin/adsprpcd
+vendor/lib64/libadsprpc.so
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvopt.so
 
 # APTX
 lib/libaptX_encoder.so:vendor/lib/libaptX_encoder.so
 lib64/libaptX_encoder.so:vendor/lib64/libaptX_encoder.so
 
-# Audio Dolby libraries
-vendor/lib/libhwdaphal.so
-vendor/lib64/libhwdaphal.so
-
-# Audio libraries - from tissot - OPR1.170623.026
-etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
-framework/audiosphere.jar|e12a3ee72672b82dffc9a5675d0c30ddf0328807
-vendor/lib/libacdb-fts.so|432041db714bfaafb4dd12ff5dadf832fe322785
-vendor/lib/libacdbloader.so|9c6ebfaf00e7dddf9e5f156dd6aaf0d616ad683e
-vendor/lib/libacdbrtac.so|8186bce33a5fbf79a11163c29b1669e85f9f1f84
-vendor/lib/libadiertac.so|cd008e30ad53d375d56c843c02e10717198ac4bf
-vendor/lib/libadm.so|5a02d7fd358eb488460ddb323990091e41e0822e
-vendor/lib/libaudcal.so|17c572176aaa38dcc1989dc6f8e6d554856e8bdb
-vendor/lib/libaudioalsa.so|a0170e763a7875f06de42ee90b887be6a9bb192a
-vendor/lib/libmdsprpc.so|c1bf9d1c2dee28c6fdee999acb9b72859d28416b
-vendor/lib/libqtigef.so|50f3a6fa607a9e4a525d05a4852aaf091c79d2ac
-vendor/lib/soundfx/libasphere.so|ddc5de6df568137a728c75203dc65db688a0903e
-vendor/lib/soundfx/libqcbassboost.so|cf029cdd42aa2439c7cda0d0c2acfc8de6ef732d
-vendor/lib/soundfx/libqcreverb.so|bd74bc0d62d835dcf3cd90521a532d27259541df
-vendor/lib/soundfx/libqcvirt.so|43cf84b66ccee38ae21910e502aa8c72731ff475
-vendor/lib/soundfx/libshoebox.so|cf17c5d4e98bcc2c7e3929a4fc297ed6ab7bedf2
-vendor/lib64/libacdb-fts.so|f7ff3f4d87c2791a11eee69e328a1beb33256299
-vendor/lib64/libacdbloader.so|0beeac377de2d275cf94e86d30a99163d9e8b527
-vendor/lib64/libacdbrtac.so|e351b36a4f14dc6b6626e6dca2bfc0915e68ccc2
-vendor/lib64/libadiertac.so|b145d356dd4eeed3243f394ea53b3f7b8e3e2bd7
-vendor/lib64/libaudcal.so|b14a42b8eb0fc8ec8f24c1375c622f9cbad60dbc
-vendor/lib64/libaudioalsa.so|e0c80f38802cfd6cc74352a108040ff5f165614b
-vendor/lib64/libmdsprpc.so|21d2e79900608d7dc7b3d3c12e405fc576c3ff0c
-vendor/lib64/libqtigef.so|63a415a14489f2a45315038a45f8e0f4fe7efa2c
-vendor/lib64/soundfx/libasphere.so|fd609c3228f55e9172154735fab9ba742a8d530a
-vendor/lib64/soundfx/libqcbassboost.so|280663da3238288914ecd028ce324fc98d084d8c
-vendor/lib64/soundfx/libqcreverb.so|cbbcba339a8ad9d769bf1c89cff3c2c1a5772563
-vendor/lib64/soundfx/libqcvirt.so|6d8720c7adc40c888509cd0c1e8942fcde161059
-vendor/lib64/soundfx/libshoebox.so|72f230e368045ff6b7db529d3b3e534a6723d7ec
+# Audio
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libFlacSwDec.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libaudcal.so
+vendor/lib/libFlacSwDec.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
 
 # Bluetooth - from tissot - OPR1.170623.026
 vendor/bin/hci_qcomm_init|0781c55c080ff2309e1e8d77d9fa0111a827b3c7

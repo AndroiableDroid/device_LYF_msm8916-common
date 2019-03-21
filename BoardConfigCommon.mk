@@ -164,12 +164,6 @@ include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     $(PLATFORM_PATH)/sepolicy
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib64/lib-imsdpl.so|libshim_boringssl.so \
-    /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
-    /system/vendor/lib64/lib-imscamera.so|libshims_camera.so
-
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211

@@ -38,7 +38,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := ims/ims.c
+LOCAL_SRC_FILES := ims/ims.cpp
 LOCAL_MODULE := libshims_ims
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

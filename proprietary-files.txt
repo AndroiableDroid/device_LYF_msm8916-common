@@ -176,49 +176,14 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so|3c725ea0f85bf709bcf77761d707abf7660b1c4
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|da8f10c9914e3cea26ee97b8d060fca6f1e5f8e8
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|dc576dfcb0bf390a106b5ed8861e7f547110cbf1
 
-# GPS - from tissot - OPR1.170623.026
-etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
-etc/permissions/com.qualcomm.location.xml|e837966b6a1a63430ac7ff648e84b0312cd3a46b
-etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
-framework/com.qti.location.sdk.jar|42d0fcbea1d52aa098c953f184c1a9d177b887a7
-framework/izat.xt.srv.jar|8fafa7d1c898b6b9346664fe345b5a9993193562
-lib64/liblocationservice_jni.so|6e977d34181245522e97f96fda3a610b35f6f6d9
-lib64/libxt_native.so|162580006aaf75008a84d4c8b1718b6daabf4863
-lib64/vendor.qti.gnss@1.0.so|a46606f3e3dda968f2bcd428da2450afcb90b34f
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|e0e476000dc34df1c12df5002b9be13126bcd09a
-vendor/bin/hw/vendor.qti.gnss@1.0-service|28bb2a8f953b7d05137141f3529cbb5e7ccf3563
-vendor/bin/loc_launcher|fdfb680feb8d248b1929d9a3e01819e05a47b228
-vendor/bin/lowi-server|12f312183ffe58b1b5c52dd746c0dd15411cd90b
-vendor/bin/slim_daemon|35dd74757507dc6b51f4483fb3a18cd4090fcb32
-vendor/bin/xtra-daemon|bf445bdc6f0a046ee171f9d33302d2b8736f5584
-vendor/etc/cacert_location.pem|0789bf799c7e45d352a83e2f79ddb0cea86db85b
-vendor/etc/init/vendor.qti.gnss@1.0-service.rc|ba25c7c3e8c3ef52b15f7f420012c80a4489a784
-vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
-vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so|72998e35b848c2b497bcc056c16fe992489ca22e
-vendor/lib64/libalarmservice_jni.so|f03c3579c4b04ab71b29232ac1d89aa75b08157f
-vendor/lib64/libdataitems.so|a6e39060406a0f8b206a82412bbfcbefff0b8093
-vendor/lib64/libdrplugin_client.so|daac6495ff6f68a773c5c0b0ad3101304d90d9e2
-vendor/lib64/lib_drplugin_server.so|7f1a11ff830261abba87db7d4c5ca6845433a830
-vendor/lib64/libDRPlugin.so|531c7ab7502f0ebede2c7171acd9f36500fa4421
-vendor/lib64/libevent_observer.so|adab5b976c8ae43d8188298332c5f642d0c8c554
-vendor/lib64/libflp.so|5ed634d12230e58615beb13c434e44fee8c581c7
-vendor/lib64/libgdtap.so|329fba392ac08fc6c0d0a811ad1140e13ecd40e6
-vendor/lib64/libgeofence.so|3562e4cc826f7b490ab454f649e66cb6f03b6b22
-vendor/lib64/libizat_client_api.so|a931cdccce4d8005824522c110bb8e3254233652
-vendor/lib64/libizat_core.so|ea29c1e46f51f0b25a6a0a9b44e9d37f92552290
-vendor/lib64/liblbs_core.so|a8ba94a06188955b76a75b7ac3f211a85376efa3
--vendor/lib64/libloc_api_v02.so|328640ee1f90e8c43fba6bffb7a216be2ae8e513
-vendor/lib64/libloc_ds_api.so|5ad6d49169db1120d1e46a625d8cceaf254bd3f7
-vendor/lib64/libloc_externalDr.so|4d20a48a08c7b8e92d5fb9275ce274a3e933fe0d
-vendor/lib64/liblocationservice_glue.so|6557ef4e9bb6841d3ec66cf9054284c9357e7cab
-vendor/lib64/liblocationservice.so|944d8876bc52dffe238deafd7589aba0585c2837
-vendor/lib64/liblowi_client.so|cc1f9b4055844e35960898133408127e9ae46d9c
-vendor/lib64/liblowi_wifihal.so|9712125ee27223a9298a6aac371f263ea0d9aaf3
-vendor/lib64/libquipc_os_api.so|6eff5ee138bc47161ecb2a8e0ef59596cb0a2c18
-vendor/lib64/libulp2.so|14ca22028ac7f37ff9dac348896e63accfa4a1b3
-vendor/lib64/libxtadapter.so|dd494a0618b53d4c8f6fee88d13daadca1ff1ab7
-vendor/lib64/libxtwifi_ulp_adaptor.so|9e3d3b35ca62d3db539ae7fc28a14a8dbc8d8a8c
-vendor/lib64/vendor.qti.gnss@1.0_vendor.so|0543281cbcdb570188b7a8d04ad350b1cd051f78
+# GPS - from kipper
+-lib64/libloc_api_v02.so:vendor/lib64/libloc_api_v02.so|bdd3a92246d9a6a42b928201835f2d767cde1eff
+-lib64/libloc_ds_api.so:vendor/lib64/libloc_ds_api.so|e06cd5c399bf64d8f28d45ccd18b65c612b76625
+vendor/lib64/hw/flp.default.so|03784211a3d7c144c0bc6f86b50d1cc5eb97f8c5
+vendor/lib64/libflp.so|33793c405cf39858854c8023dec4b4e0d9d79ff0
+vendor/lib64/libgeofence.so|23cb999eb444971170ff60873392706cf003ed23
+vendor/lib64/libizat_core.so|8d911c3ebf57e5179a3e37b610c055787d8d90bd
+vendor/lib64/liblbs_core.so|726eda07ad6f7acd46b380b7c052652017d69189
 
 # Graphics - from kipper
 vendor/lib64/egl/eglsubAndroid.so|1043fd1935186ef1d54328e17bbbce810ba8e8fa

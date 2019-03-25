@@ -371,7 +371,7 @@ on property:vendor.hw.fm.init=1
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps oem_2901 wakelock
+    group radio audio bluetooth gps oem_2950 wakelock
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
@@ -383,13 +383,13 @@ service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendo
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
-    group root wifi wakelock radio inet oem_2901
+    group root wifi wakelock radio inet oem_2950
     writepid /dev/cpuset/system-background/tasks
 
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio oem_2901 diag usb net_admin
+    group radio oem_2950 diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
 service qcom-sh /system/vendor/bin/init.qcom.sh

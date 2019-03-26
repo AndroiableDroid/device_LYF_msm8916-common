@@ -98,6 +98,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libshims_ims \
+    libshims_flp \
+    libshims_get_process_name \
     libshim_boringssl \
     libshims_camera
 

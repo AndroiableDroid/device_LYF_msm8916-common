@@ -123,6 +123,19 @@ on post-fs-data
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
 
+    # Mark the copy complete flag to not completed
+    write /data/misc/radio/copy_complete 0
+    chown radio radio /data/misc/radio/copy_complete
+    chmod 0660 /data/misc/radio/copy_complete
+
+    # File flags for prebuilt ril db file
+    write /data/misc/radio/prebuilt_db_support 1
+    chown radio radio /data/misc/radio/prebuilt_db_support
+    chmod 0400 /data/misc/radio/prebuilt_db_support
+    write /data/misc/radio/db_check_done 0
+    chown radio radio /data/misc/radio/db_check_done
+    chmod 0660 /data/misc/radio/db_check_done
+
     setprop vold.post_fs_data_done 1
 
 on early-boot
@@ -302,7 +315,7 @@ on property:hw.fm.init=1
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps oem_2901 wakelock
+    group radio audio bluetooth gps oem_2950 wakelock
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
@@ -311,10 +324,19 @@ service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendo
     group root
     writepid /dev/cpuset/system-background/tasks
 
+service rfs_access /system/vendor/bin/rfs_access
+   class core
+   user root
+   group system net_raw
+
+service tftp_server /system/vendor/bin/tftp_server
+   class main
+   user root
+
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
-    group root wifi wakelock radio inet oem_2901
+    group root wifi wakelock radio inet oem_2950
     writepid /dev/cpuset/system-background/tasks
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
@@ -370,6 +392,31 @@ service time_daemon /system/vendor/bin/time_daemon
     group root
     writepid /dev/cpuset/system-background/tasks
 
+service vendor.atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+
+service per_mgr /system/vendor/bin/pm-service
+    class core
+    user system
+    group system
+
+service per_proxy /system/vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.powerctl=*
+    stop per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
+
 service ppd /system/vendor/bin/mm-pp-daemon
     class late_start
     disabled
@@ -389,6 +436,17 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
+service qcom-sh /system/bin/sh /system/vendor/bin/init.qcom.sh
+    class late_start
+    user root
+    oneshot
+
 service qcom-mem /system/vendor/bin/init.qcom.mem.sh
     disabled
     oneshot
+
+on property:persist.radio.atfwd.start=false
+    stop atfwd
+
+on property:radio.atfwd.start=false
+    stop atfwd

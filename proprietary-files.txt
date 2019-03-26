@@ -210,15 +210,26 @@ vendor/lib64/libdisp-aba.so
 vendor/lib64/libmm-abl.so
 vendor/lib64/libmm-abl-oem.so
 
-# Qualcomm framework
+# Peripheral Manager
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib/libperipheral_client.so
+vendor/lib64/libperipheral_client.so
+
+# QMI
 bin/irsc_util:vendor/bin/irsc_util
+etc/data/dsi_config.xml:vendor/etc/data/dsi_config.xml
+etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config.xml
+etc/data/qmi_config.xml:vendor/etc/data/qmi_config.xml
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 vendor/lib64/libdiag.so
-vendor/lib64/libdsi_netctrl.so|7268d10bf886792f4bbcc080aa6d906e2c128758
+vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
+vendor/lib64/libqmi.so
 vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
@@ -226,15 +237,15 @@ vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
-vendor/lib64/libqmi.so
 vendor/lib64/libsmemlog.so
 vendor/lib/libdiag.so
-vendor/lib/libdsi_netctrl.so|8ffec0ddee840487cd06901beb8d19311d697312
+vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
+vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
@@ -242,36 +253,44 @@ vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
-vendor/lib/libqmi.so
 vendor/lib/libsmemlog.so
 
 # Radio
+-app/embms/embms.apk
+-app/fastdormancy/fastdormancy.apk
 -app/shutdownlistener/shutdownlistener.apk:vendor/app/shutdownlistener/shutdownlistener.apk
-bin/netmgrd:vendor/bin/netmgrd|f4afd91b2f91fcad9f756a339ecae859e2cba9c1
-bin/qmuxd:vendor/bin/qmuxd|b1b3c88067054ddbc224e30707e1eb99be079d6e
+-app/QtiTelephonyService/QtiTelephonyService.apk
+bin/netmgrd:vendor/bin/netmgrd
+bin/qmuxd:vendor/bin/qmuxd
 bin/radish:vendor/bin/radish
 bin/rmt_storage:vendor/bin/rmt_storage
-etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml|dd47edbccc24a5c254dca18250c0136ecab4f0d6
-etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml|5a65b197fbc65e3e89e829d07da11904eae3e938
+bin/tftp_server:vendor/bin/tftp_server
+vendor/bin/ATFWD-daemon|0cc1903a8fe354875361d2a880cd4d45
+bin/rfs_access:vendor/bin/rfs_access
+etc/permissions/embms.xml:vendor/etc/permissions/embms.xml
+etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+framework/embmslibrary.jar:vendor/framework/embmslibrary.jar
 -framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
 -framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
+framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/lib64/com.quicinc.cne.api@1.0.so|503825cc8a3c0d422e16e04b398d2c1924e518ca
-vendor/lib64/com.quicinc.cne.constants@1.0.so|a60fde6f9328635bf43bb7008dd9517e4e749e8b
-vendor/lib64/libcneapiclient.so|33e7465996749a8823ac03e34a94e3112c88dda4
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
-vendor/lib64/libperipheral_client.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
-vendor/lib64/libxml.so
+vendor/lib/liblqe.so
 vendor/lib/libmdmdetect.so
+vendor/qcril.db
 
 # Radio - IMS
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
 bin/imscmservice:vendor/bin/imscmservice
 bin/imsdatadaemon:vendor/bin/imsdatadaemon
 bin/imsqmidaemon:vendor/bin/imsqmidaemon
@@ -279,13 +298,11 @@ bin/ims_rtp_daemon:vendor/bin/ims_rtp_daemon
 etc/permissions/imscm.xml:vendor/etc/permissions/imscm.xml
 etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 -framework/imscmlibrary.jar:vendor/framework/imscmlibrary.jar
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
 vendor/lib64/lib-dplmedia.so
-vendor/lib64/libimscamera_jni.so
+lib64/libimscamera_jni.so:vendor/lib64/libimscamera_jni.so
 vendor/lib64/lib-imscamera.so
 vendor/lib64/lib-imsdpl.so
-vendor/lib64/libimsmedia_jni.so
+lib64/libimsmedia_jni.so:vendor/lib64/libimsmedia_jni.so
 vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsrcscmclient.so
 vendor/lib64/lib-ims-rcscmjni.so

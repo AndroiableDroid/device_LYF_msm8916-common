@@ -171,6 +171,10 @@ vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 
+# Modem
+vendor/lib/libwms.so
+vendor/lib64/libwms.so
+
 # Perf - from TA-1000 - OPR1.170623.026
 lib/vendor.qti.hardware.iop@1.0.so|122ec67a39da6977cdde9d2a5c9e8b370b9ab023
 lib/vendor.qti.hardware.perf@1.0.so|86a267b582710c9ff653a16bd0b292327dc64ead

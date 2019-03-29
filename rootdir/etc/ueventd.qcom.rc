@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-/dev/diag                 0666   system     oem_2950
+/dev/diag                 0666   system     oem_2901
 
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system

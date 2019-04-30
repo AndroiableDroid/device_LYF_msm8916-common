@@ -395,7 +395,7 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 -priv-app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
+-priv-app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so
@@ -456,10 +456,10 @@ vendor/lib64/libthermalclient.so|9beae9671d80ee9b1d47689ed32b5780a863cb77
 vendor/lib64/libthermalioctl.so|ca2dca5f433073df781073f449fd7ed73a4e4d3c
 
 # Time services
--app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
-bin/time_daemon:vendor/bin/time_daemon
--vendor/lib64/libtime_genoff.so
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
+-vendor/lib64/libtime_genoff.so
 
 # TUI - from vivo 1724 - OPM1.171019.011
 lib/vendor.qti.hardware.tui_comm@1.0.so|b5460afc3e3c6b0f39dfdef6b49a39f537ffa89a

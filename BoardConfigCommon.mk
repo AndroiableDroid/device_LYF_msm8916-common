@@ -205,7 +205,7 @@ BOARD_SEPOLICY_DIRS += \
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib64/lib-imsvideocodec.so|libshim_ims.so
+    /system/lib64/lib-imsvideocodec.so|libshims_ims.so
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true

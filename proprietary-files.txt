@@ -143,13 +143,13 @@ framework/dpmapi.jar|66a30e2752b058f6f522721ef6b5efb4c747f7ed
 framework/tcmclient.jar|5f3878f0fe312a429d3a69a2119b34100818292e
 -priv-app/dpmserviceapp/dpmserviceapp.apk|a642336052f3e5d70580700e2aebba230a5f663f
 lib/com.qualcomm.qti.dpm.api@1.0.so|658b574dc31f2f7f87e52c75c9564d59bed8873f
-lib/libdiag_system.so|a15e5ae70d1a73501b05b3aefbbc662048e6fbd3
+lib/libdiag_system.so|ae4f95ef4dd3399a0ad4f1f9669012eee670c314
 lib/libdpmctmgr.so|1be276d0b3b2f3d2a858edde1e6bf197399a037e
 lib/libdpmfdmgr.so|4e22f8a028a915711f4e03bcf43ae4d514b56993
 lib/libdpmframework.so|9e52a99f2be9418e91b504d147960c4851741f53
 lib/libdpmtcm.so|c48c747670ad1495733dd67c68aa5859c89db654
 lib64/com.qualcomm.qti.dpm.api@1.0.so|2af88934e4039edaac842576a1861cbdfe39838b
-lib64/libdiag_system.so|d715979a771a964ef3d0f9fe1b297259e74e4f94
+lib64/libdiag_system.so|7f746ad2f26c0abff9844ff4002d68b47723be55
 lib64/libdpmctmgr.so|595449eff197e8c3bc6f7a4f0242188abe82418f
 lib64/libdpmfdmgr.so|f03869f7bee601182c545e892523d23529439e16
 lib64/libdpmframework.so|9dc137606c1cb73e3ec5a97c954df93e750dd459
@@ -283,11 +283,11 @@ vendor/lib64/libqti-util.so|dbb96954a50d36822ddf77a2ff886938d32cbb28
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so|06bacffa87ddcf855578079147bc802907b7374e
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|75f2b67fe4ef59eb1a7db3f14620fd2dd5fc20e7
 
-# Peripheral manager
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib64/libperipheral_client.so
-vendor/lib/libperipheral_client.so
+# Peripheral manager - from diasy - V10.0.3.0.PDLMIXM
+vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
+vendor/bin/pm-service|7cbca1671529a805177f11f3f72defdbbe48a61c
+vendor/lib64/libperipheral_client.so|e2fbf94c589dbf8ae6c544a34441783ae9db3a08
+vendor/lib/libperipheral_client.so|6e06ff7e89cb8054612c98c25240e7570c069752
 
 # Postprocessing - from ether - N108.zip
 bin/mm-pp-daemon:vendor/bin/mm-pp-daemon|3a2f1710fb943a33e69ac8907e5707b38b6a604c
@@ -395,7 +395,7 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 -priv-app/ims/ims.apk
--priv-app/imssettings/imssettings.apk
+-vendor/app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imscamera.so

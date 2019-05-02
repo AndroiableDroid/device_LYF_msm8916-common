@@ -83,9 +83,6 @@ ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
 ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999
 ro.telephony.default_network=9,9
 ril.subscription.types=NV,RUIM
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
-persist.data.mode=concurrent
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.rat_on=combine
@@ -94,7 +91,6 @@ sys.vendor.shutdown.waittime=500
 ro.build.shutdown_timeout=0
 persist.radio.videopause.mode=1
 persist.radio.schd.cache=3500
-persist.rcs.supported=1
 persist.vendor.ims.disableADBLogs=0
 persist.vendor.ims.disableDebugLogs=0
 persist.vendor.ims.disableDebugDataPathLogs=0
@@ -112,17 +108,11 @@ persist.vendor.radio.sib16_support=1
 persist.vendor.radio.add_power_save=1
 persist.vendor.radio.start_ota_daemon=1
 persist.vendor.radio.adb_log_on=1
-vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-vendor.rild.libargs=-d /dev/smd0
-DEVICE_PROVISIONED=1
 
 # IMS
 net.lte.volte_call_capable=true
-persist.ims.enableADBLogs=1
-persist.ims.enableDebugLogs=1
 persist.radio.calls.on.ims=true
 persist.radio.csvt.enabled=false
-persist.radio.jbims=1
 persist.radio.ROTATION_ENABLE=1
 persist.radio.VT_ENABLE=1
 persist.radio.VT_HYBRID_ENABLE=1
@@ -138,3 +128,4 @@ net.tcp.2g_init_rwnd=10
 
 # WiFi
 wifi.interface=wlan0
+

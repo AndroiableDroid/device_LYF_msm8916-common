@@ -195,9 +195,6 @@ PROTOBUF_SUPPORTED := true
 # Recovery
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cm
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
-
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \

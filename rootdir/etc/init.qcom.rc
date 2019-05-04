@@ -331,35 +331,40 @@ on property:vendor.bluetooth.hciattach=true
 on property:vendor.bluetooth.hciattach=false
     setprop vendor.bluetooth.status off
 
-service imsqmidaemon /system/vendor/bin/imsqmidaemon
+## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
-    group radio log diag oem_2901
+    group radio log diag
+    writepid /dev/cpuset/system-background/tasks
 
-service imsdatadaemon /system/vendor/bin/imsdatadaemon
+# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
+service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag oem_2901
+    group system wifi radio inet log diag
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start imsdatadaemon
+    start vendor.imsdatadaemon
 
-service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
-   group radio diag inet log oem_2901
-   disabled
+   group radio diag inet log
+   writepid /dev/cpuset/system-background/tasks
 
-service imsrcsservice /system/vendor/bin/imsrcsd
+service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    class main
    user system
-   group radio diag inet log oem_2901
+   group radio diag inet log wakelock
+   writepid /dev/cpuset/system-background/tasks
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start ims_rtp_daemon
+    restart vendor.ims_rtp_daemon
 
 # FM
 on property:vendor.hw.fm.init=0
@@ -372,7 +377,7 @@ on property:vendor.hw.fm.init=1
 service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps oem_2901 wakelock
+    group radio audio bluetooth gps nfc diag
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
@@ -392,6 +397,7 @@ service qti /system/vendor/bin/qti
     user radio
     group radio oem_2901 diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service qcom-sh /system/vendor/bin/init.qcom.sh
     class late_start

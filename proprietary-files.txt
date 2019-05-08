@@ -245,6 +245,9 @@ vendor/lib/libscale.so|972cbd87794b4ce0a5c23db946acbafd4cd6d073
 etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw
 
+# Gatekeeper
+vendor/lib64/hw/gatekeeper.msm8916.so
+
 # Media
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so

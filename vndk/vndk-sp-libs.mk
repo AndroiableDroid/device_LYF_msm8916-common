@@ -45,4 +45,5 @@ EXTRA_VENDOR_LIBRARIES := \
     android.hardware.graphics.bufferqueue@1.0 \
     android.hidl.token@1.0 \
     android.hardware.media.omx@1.0 \
-    android.hardware.media@1.0
+    android.hardware.media@1.0 \
+    android.hardware.gatekeeper@1.0

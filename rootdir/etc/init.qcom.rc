@@ -206,7 +206,7 @@ on early-boot
     mkdir /dev/socket/netmgr 0750 radio radio
 
     # Busy loop to wait for devices booted by devstart_sh just in case device not ready
-    exec - root root system -- /system/vendor/bin/init.qcom.devwait.sh
+    exec - root root system -- /vendor/bin/init.qcom.devwait.sh
 
     write /sys/kernel/boot_adsp/boot 1
 
@@ -298,12 +298,12 @@ service dpmQmiMgr /vendor/bin/dpmQmiMgr
     user system
     group radio system
 
-service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
+service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
-service rmt_storage /system/vendor/bin/rmt_storage
+service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -317,7 +317,7 @@ service tftp_server /vendor/bin/tftp_server
    user root
    writepid /dev/cpuset/system-background/tasks
 
-service hciattach /system/vendor/bin/init.qcom.bt.sh
+service hciattach /vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
@@ -332,7 +332,7 @@ on property:vendor.bluetooth.hciattach=false
     setprop vendor.bluetooth.status off
 
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
+service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
@@ -340,7 +340,7 @@ service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     writepid /dev/cpuset/system-background/tasks
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -351,7 +351,7 @@ service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
 
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
    class main
    user system
    group radio diag inet log
@@ -368,25 +368,25 @@ on property:vendor.hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/vendor/bin/qmuxd
+service qmuxd /vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps nfc diag
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/vendor/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet oem_2901
     writepid /dev/cpuset/system-background/tasks
 
-service qti /system/vendor/bin/qti
+service qti /vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb net_admin
@@ -402,17 +402,17 @@ service atfwd /vendor/bin/ATFWD-daemon
 on property:persist.radio.atfwd.start=true
     start atfwd
 
-service qcom-sh /system/vendor/bin/init.qcom.sh
+service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
 
-service per_mgr /system/vendor/bin/pm-service
+service per_mgr /vendor/bin/pm-service
     class core
     user system
     group system
 
-service per_proxy /system/vendor/bin/pm-proxy
+service per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -456,7 +456,7 @@ service charger /charger
     seclabel u:r:healthd:s0
 
 # start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -465,7 +465,7 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
 on property:sys.boot_completed=1
     restart cameraserver
 
-service qseecomd /system/vendor/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
@@ -480,13 +480,13 @@ service thermal-engine /vendor/bin/thermal-engine
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service time_daemon /system/vendor/bin/time_daemon
+service time_daemon /vendor/bin/time_daemon
     class late_start
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service ppd /vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -511,12 +511,12 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class late_start
     user system
     group system wifi radio
     oneshot
 
-service qcom-mem /system/vendor/bin/init.qcom.mem.sh
+service qcom-mem /vendor/bin/init.qcom.mem.sh
     disabled
     oneshot

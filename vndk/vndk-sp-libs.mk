@@ -25,9 +25,20 @@ VNDK_SP_LIBRARIES := \
     liblzma \
     libpng \
     libunwind \
-    libutils
+    libutils \
+    libz
 
 EXTRA_VENDOR_LIBRARIES := \
     libui \
     android.hardware.configstore@1.0 \
-    android.hardware.configstore-utils
+    android.hardware.configstore-utils \
+    android.hardware.configstore-utils \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    libhardware_legacy \
+    libbinder \
+    android.hardware.camera.common@1.0  \
+    android.hardware.sensors@1.0 \
+    android.hardware.camera.device@1.0 \
+    libsensor_vendor \
+    libstagefright_foundation

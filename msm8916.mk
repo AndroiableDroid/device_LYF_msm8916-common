@@ -111,11 +111,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 PRODUCT_PACKAGES += \
-    libshims_ims \
-    libshim_boringssl \
-    libshims_camera
-
-PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     android.hardware.gnss@1.0-service
 
@@ -146,6 +141,10 @@ endif
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
 
 # Keymaster
 ifneq ($(TARGET_PROVIDES_KEYMASTER),true)
@@ -289,6 +288,28 @@ PRODUCT_COPY_FILES += \
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.cyanogen_8916
+
+# VNDK-SP:
+PRODUCT_PACKAGES += \
+    mobee01a-vndk
+
+# Vendor Specific
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@1.0.vendor \
+    android.hardware.camera.common@1.0.vendor \
+
+# Sensor
+PRODUCT_PACKAGES += \
+   android.hardware.sensors@1.0.vendor
+
+# Display
+PRODUCT_PACKAGES += \
+   libhardware_legacy.vendor \
+   libbinder.vendor \
+   libui.vendor \
+   android.hardware.configstore@1.0.vendor \
+   android.hardware.configstore-utils.vendor \
+   libstagefright_foundation.vendor
 
 # inherit from the proprietary version
 $(call inherit-product, vendor/LYF/msm8916-common/msm8916-common-vendor.mk)

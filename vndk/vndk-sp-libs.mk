@@ -29,17 +29,20 @@ VNDK_SP_LIBRARIES := \
     libz
 
 EXTRA_VENDOR_LIBRARIES := \
-    libui \
-    android.hardware.configstore@1.0 \
-    android.hardware.configstore-utils \
-    android.hardware.configstore-utils \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0 \
     libhardware_legacy \
     libbinder \
-    android.hardware.camera.common@1.0  \
-    android.hardware.sensors@1.0 \
-    android.hardware.camera.device@1.0 \
+    libui \
+    android.hardware.configstore@1.0 \
+    android.hardware.configstore-utils \
     libsensor_vendor \
     libstagefright_foundation \
-    android.hardware.gatekeeper@1.0-impl
+    libstdc++ \
+    libnativehelper \
+    libgui \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0 \
+    android.hidl.token@1.0 \
+    android.hardware.media.omx@1.0 \
+    android.hardware.media@1.0

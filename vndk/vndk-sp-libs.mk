@@ -25,7 +25,7 @@ VNDK_SP_LIBRARIES := \
     liblzma \
     libpng \
     libunwind \
-    libutils \
+    libutils
 
 EXTRA_VENDOR_LIBRARIES := \
     libui \

@@ -17,7 +17,10 @@
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-PRODUCT_ENFORCE_RRO_TARGETS := framework-res
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res \
+    SettingsProvider \
+    framework-res
 
 # ANT+
 PRODUCT_PACKAGES += \

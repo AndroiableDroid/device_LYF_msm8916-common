@@ -41,4 +41,5 @@ EXTRA_VENDOR_LIBRARIES := \
     android.hardware.sensors@1.0 \
     android.hardware.camera.device@1.0 \
     libsensor_vendor \
-    libstagefright_foundation
+    libstagefright_foundation \
+    android.hardware.gatekeeper@1.0-impl

@@ -24,7 +24,7 @@ include $(CLEAR_VARS)
 CMN_IMAGES := \
     cmnlib.b00 cmnlib.b01 cmnlib.b02 cmnlib.b03 cmnlib.mdt
 
-CMN_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(CMN_IMAGES)))
+CMN_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(CMN_IMAGES)))
 $(CMN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "CMN firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -47,7 +47,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 ISDB_IMAGES := \
     isdbtmm.b00 isdbtmm.b01 isdbtmm.b02 isdbtmm.b03 isdbtmm.mdt
 
-ISDB_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(ISDB_IMAGES)))
+ISDB_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(ISDB_IMAGES)))
 $(ISDB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "ISDB firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -74,7 +74,7 @@ MODEM_IMAGES := \
     modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 modem.b21 \
     modem.b24 modem.b25 modem.b26 modem.b27 modem.mdt
 
-MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
+MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(MODEM_IMAGES)))
 $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -86,7 +86,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(MODEM_SYMLINKS)
 PLAYREADY_IMAGES := \
     playread.b00 playread.b01 playread.b02 playread.b03 playread.mdt
 
-PLAYREADY_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(PLAYREADY_IMAGES)))
+PLAYREADY_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(PLAYREADY_IMAGES)))
 $(PLAYREADY_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Playready firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -99,7 +99,7 @@ WCNSS_IMAGES := \
     wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b06 \
     wcnss.b09 wcnss.b10 wcnss.b11 wcnss.mdt
 
-WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(WCNSS_IMAGES)))
+WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WCNSS_IMAGES)))
 $(WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -111,7 +111,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_SYMLINKS)
 WV_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 
-WV_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(WV_IMAGES)))
+WV_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(WV_IMAGES)))
 $(WV_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Widevine firmware link: $@"
 	@mkdir -p $(dir $@)

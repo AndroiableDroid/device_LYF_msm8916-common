@@ -60,10 +60,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := gps.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_OWNER := qcom
 LOCAL_VENDOR_MODULE := true
-<<<<<<< HEAD
-
-=======
->>>>>>> 90f3124... LS-5015: vendorize GPS HALS
 LOCAL_MODULE_TAGS := optional
 
 ## Libs

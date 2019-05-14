@@ -200,6 +200,7 @@ endif
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
+-include $(LOCAL_PATH)/$(TARGET_BOARD_PLATFORM_VARIANT)_prop.mk
 
 # Netutils
 PRODUCT_PACKAGES += \

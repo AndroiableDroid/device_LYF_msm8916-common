@@ -253,10 +253,10 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 
 # Perf - from TA-1000 - OPR1.170623.026
-lib/vendor.qti.hardware.iop@1.0.so|122ec67a39da6977cdde9d2a5c9e8b370b9ab023
-lib/vendor.qti.hardware.perf@1.0.so|86a267b582710c9ff653a16bd0b292327dc64ead
-lib64/vendor.qti.hardware.iop@1.0.so|8f6115594d941e1b356f29c8e79c97bbc060d155
-lib64/vendor.qti.hardware.perf@1.0.so|3ac7bcfcb6eed93d50f35b49de05ee77255d92e6
+-lib/vendor.qti.hardware.iop@1.0.so|122ec67a39da6977cdde9d2a5c9e8b370b9ab023
+-lib/vendor.qti.hardware.perf@1.0.so|86a267b582710c9ff653a16bd0b292327dc64ead
+-lib64/vendor.qti.hardware.iop@1.0.so|8f6115594d941e1b356f29c8e79c97bbc060d155
+-lib64/vendor.qti.hardware.perf@1.0.so|3ac7bcfcb6eed93d50f35b49de05ee77255d92e6
 vendor/bin/hw/vendor.qti.hardware.iop@1.0-service|ca792ae253f3d6b46e3607e3815838e0c989f9e3
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|b8cad5f3bdf49c215f2f6a499710d29a7fa18a0d
 vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc|32890b3d05b3733ee92cdd030d5757ceab847848
@@ -302,8 +302,8 @@ vendor/lib64/libmm-qdcm.so|c7f1a51304f4cc5aaf507acb6285a46a71b973cf
 vendor/lib64/libsensor1.so|677086b02650955a572caf379f8125c80eb4fba2
 
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
-etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
 lib/libqmi_cci_system.so
 lib64/libdiag_system.so
@@ -344,10 +344,10 @@ vendor/lib64/libsmemlog.so
 
 # Radio
 -app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
--framework/QtiTelephonyServicelibrary.jar
--framework/qcrilhook.jar
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+-framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 -framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
@@ -384,7 +384,7 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 -app/uceShimService/uceShimService.apk
-etc/permissions/qti-vzw-ims-internal.xml
+etc/permissions/qti-vzw-ims-internal.xml:vendor/etc/permissions/qti-vzw-ims-internal.xml
 etc/permissions/com.qualcomm.qti.imscmservice.xml
 framework/com.qualcomm.qti.imscmservice@1.0-java.jar
 lib64/com.qualcomm.qti.imscmservice@1.0.so

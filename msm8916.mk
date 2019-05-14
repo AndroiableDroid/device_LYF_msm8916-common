@@ -17,10 +17,6 @@
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res \
-    SettingsProvider \
-    framework-res
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -75,8 +71,10 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.allocator@2.0-impl:64 \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl:64 \
+    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
@@ -293,12 +291,9 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
-    mobee01a-vndk
-
-# Vendor Specific
-PRODUCT_PACKAGES += \
-    android.hardware.camera.device@1.0.vendor \
-    android.hardware.camera.common@1.0.vendor \
+    libicuuc.vendor \
+    libstdc++.vendor \
+    msm8916-common-vndk
 
 # Sensor
 PRODUCT_PACKAGES += \
@@ -309,7 +304,7 @@ PRODUCT_PACKAGES += \
    libhardware_legacy.vendor \
    libbinder.vendor \
    libui.vendor \
-   android.hardware.configstore@1.0.vendor \
+   android.hardware.configstore@1.1.vendor \
    android.hardware.configstore-utils.vendor \
    libstagefright_foundation.vendor
 

@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 #define LOG_TAG "PowerHAL_MSM8939_Ext"
 #include <utils/Log.h>

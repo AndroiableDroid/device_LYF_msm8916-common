@@ -126,7 +126,7 @@ TARGET_USES_NEW_ION_API := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_LEGACY_HW_DISK_ENCRYPTION := true
+#TARGET_LEGACY_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
@@ -190,15 +190,16 @@ BOARD_USES_QCOM_HARDWARE := true
 # Radio
 MALLOC_SVELTE := true
 TARGET_RIL_VARIANT := caf
+DISABLE_RILD_OEM_HOOK := false
 PROTOBUF_SUPPORTED := true
 
 # Recovery
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cm
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += \
-    $(PLATFORM_PATH)/sepolicy
+#include device/qcom/sepolicy-legacy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += \
+#    $(PLATFORM_PATH)/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

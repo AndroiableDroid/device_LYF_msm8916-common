@@ -257,9 +257,9 @@ vendor/lib/libqti-iopd.so|124672742bb36f610fa0da328162459f30d7fd80
 vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
 vendor/lib/libqti-perfd.so|2c8af66cbcb941b9da2edb68f428776cbbabdff6
 vendor/lib/libqti-util.so|459a7375feb57c2e11d012c5fb65befd94e91d06
-vendor/lib/vendor.qti.hardware.iop@1.0.so|f2b5c17ce9690569d2a74f5b01a345e383f0c20d
-vendor/lib/vendor.qti.hardware.iop@2.0.so|767246e2fc7fafe9c61c86a939f2fa99504c359e
-vendor/lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
+-vendor/lib/vendor.qti.hardware.iop@1.0.so|f2b5c17ce9690569d2a74f5b01a345e383f0c20d
+-vendor/lib/vendor.qti.hardware.iop@2.0.so|767246e2fc7fafe9c61c86a939f2fa99504c359e
+-vendor/lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
 vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|ace871969f0773da8edb1bc8367e7cdfd447a478
 vendor/lib64/libperfgluelayer.so|e8bc850cbb8d2c2b9ed8c6b9c48eb4b1fd197622
 vendor/lib64/libqti-iopd-client.so|5bbe30f8ecba5457669397cb9486f29f98c3a8ca
@@ -267,9 +267,10 @@ vendor/lib64/libqti-iopd.so|66359e2e0d6ec5cf31927ba4bfdbecce52b0fa3a
 vendor/lib64/libqti-perfd-client.so|d9fb126fb7aff2db61978f46f78e0284e95183be
 vendor/lib64/libqti-perfd.so|96806732f4e5f8c25ba2e12a3a939fc2889c7341
 vendor/lib64/libqti-util.so|30dc90c1636fd100a8e101dfa659e0b7299ff813
-vendor/lib64/vendor.qti.hardware.iop@1.0.so|9c7ae329d073ee5bc2d9743ca6ad6da0b7200537
-vendor/lib64/vendor.qti.hardware.iop@2.0.so|858e8bec809f800eb7ad1df8b743cdbde8c4296b
-vendor/lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
+-vendor/lib64/vendor.qti.hardware.iop@1.0.so|9c7ae329d073ee5bc2d9743ca6ad6da0b7200537
+-vendor/lib64/vendor.qti.hardware.iop@2.0.so|858e8bec809f800eb7ad1df8b743cdbde8c4296b
+-vendor/lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
+
 # Peripheral manager - from diasy - V10.0.3.0.PDLMIXM
 vendor/bin/pm-proxy|56e9bdaa39270aa4456c9995a8a9e4618ba616a6
 vendor/bin/pm-service|7cbca1671529a805177f11f3f72defdbbe48a61c

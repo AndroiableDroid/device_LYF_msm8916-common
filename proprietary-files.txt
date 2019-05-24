@@ -405,11 +405,11 @@ vendor/lib/libthermalclient.so|6096637d37150d89caf3c730c9964ac07797fa55
 vendor/lib64/libthermalclient.so|9beae9671d80ee9b1d47689ed32b5780a863cb77
 vendor/lib64/libthermalioctl.so|ca2dca5f433073df781073f449fd7ed73a4e4d3c
 
-# Time services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
--vendor/lib/libtime_genoff.so
--vendor/lib64/libtime_genoff.so
+# Time services - from Mi A2 Lite daisy_sprout 9 PKQ1.180917.001/V10.0.3.0.PDLMIXM release-keys
+-vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
+vendor/bin/time_daemon|5ba8f7261ce833acc77c4619b497ccbf7ea09b4c
+vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
+vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
 
 # TUI - from vivo 1724 - OPM1.171019.011
 lib/vendor.qti.hardware.tui_comm@1.0.so|b5460afc3e3c6b0f39dfdef6b49a39f537ffa89a

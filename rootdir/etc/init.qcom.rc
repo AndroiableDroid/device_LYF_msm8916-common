@@ -25,7 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import /vendor/etc/init/hw/init.qcom.power.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 
@@ -407,6 +406,16 @@ service qcom-sh /system/vendor/bin/init.qcom.sh
     user root
     oneshot
 
+service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
+    class late_start
+    user root
+    group root system wakelock graphics
+    disabled
+    oneshot
+
+on charger
+    start qcom-post-boot
+
 service per_mgr /system/vendor/bin/pm-service
     class core
     user system
@@ -463,6 +472,7 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     writepid /dev/cpuset/camera-daemon/tasks
 
 on property:sys.boot_completed=1
+    start qcom-post-boot
     restart cameraserver
 
 service qseecomd /system/vendor/bin/qseecomd

@@ -132,7 +132,8 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    chargeroffline
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh

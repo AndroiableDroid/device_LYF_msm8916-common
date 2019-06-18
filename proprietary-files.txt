@@ -372,7 +372,6 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 -framework/QtiTelephonyServicelibrary.jar
 -framework/qcrilhook.jar
--framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -406,6 +405,9 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
+# Radio - from LA.UM.7.5.r1-04000-8x96.0
+framework/qti-telephony-common.jar|9aa88e7f3166d86da217d688b003c2ecf2840acf
+
 # Radio - IMS
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
@@ -421,7 +423,6 @@ lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
--priv-app/ims/ims.apk
 -vendor/app/imssettings/imssettings.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
@@ -436,6 +437,9 @@ vendor/lib64/lib-rtpsl.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
+
+# Radio - IMS - from LA.UM.7.5.r1-04000-8x96.0
+-priv-app/ims/ims.apk|e601112f50eef846e8672eb03bcbc6e472b927c1
 
 # Thermal - from TA-1000 - OPR1.170623.026
 vendor/bin/thermal-engine|e8adca1cf42c7328e03050b8776ba87a183b5dce

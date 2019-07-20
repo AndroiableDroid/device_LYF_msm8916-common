@@ -1,8 +1,49 @@
-# ADSP
-bin/adsprpcd:vendor/bin/adsprpcd
-vendor/lib/libadsprpc.so
-vendor/lib/libfastcvopt.so
-vendor/lib64/libadsprpc.so
+# ADSP - from daisy - PKQ1.180917.001 V10.0.1.0.PDLMIFJ
+vendor/bin/adsprpcd|3d1e7e14dfc2f2468a06e0af9c0d34f4bda28d4b
+vendor/lib/libadsprpc.so|a2ff69f96a9242d4be0fe5cae2475c23294f937a
+vendor/lib/libadsp_default_listener.so|d9de89d55eba2d35a7583584b51335a663705fa7
+vendor/lib/libfastcvadsp_stub.so|6b50fd7d53811b51e06fedd87c12a794d0c2f645
+vendor/lib/libfastcvopt.so|be6d462207dcc238a734d324c479d1022a324c16
+vendor/lib/libmdsprpc.so|42d996c1d7b37f218ade5cd4b5ef0df37f93475f
+vendor/lib64/libadsprpc.so|fe4a7c28a2284ab95c068ad3ffaf256705cf9a02
+vendor/lib64/libadsp_default_listener.so|f7ea94537c66dfa11e1235064d43c8f56c3b3c51
+vendor/lib64/libfastcvadsp_stub.so|ad72fe745a7a8f4b3a355cc0aaf177c29301f29f
+vendor/lib64/libfastcvopt.so|8a5bc4a2f5b2b14c421eac5f7e828146ac0f0119
+vendor/lib64/libmdsprpc.so|1b11f9ee7a61d3b8f599f60a9d749d5829a750e6
+
+# ADSP modules - from daisy - PKQ1.180917.001 V10.0.1.0.PDLMIFJ
+vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
+vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
+vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|f4d8675a46c5e52add8f8e90e35b29cd33ac582b
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so|b9f68e320d24e9c51871a2056e1f47239bd1cb40
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|3e9c52069ff07e50191d3b3afb33b30409241ab6
+vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
+
+# Audio - from daisy - PKQ1.180917.001 V10.0.1.0.PDLMIFJ
+vendor/lib/libacdb-fts.so|c083481fd845c4b07bd56d12b6d7e0b207018c8c
+vendor/lib/libacdbloader.so|decfaa58ffb6c5bf4fd5555bee50eb01683953e8
+vendor/lib/libacdbrtac.so|3f21db59672abd74ddb1e50990abf0b41eea06f6
+vendor/lib/libadiertac.so|51f6c83eae22602989e7ce80bf7889b9a0781531
+vendor/lib/libadm.so|01e2316dfa1afcb000984e9f68903ba6a1220159
+vendor/lib/libaudcal.so|b5fb8a0ea641e84ca83f3ce2247775ec38170682
+vendor/lib/libaudioalsa.so|61d75736da88920ec71bcc721f34ed04127aac3a
+vendor/lib/libdrc.so|7db89c6858c928457a8731d90ba874420972ec9b
+vendor/lib/libqtigef.so|60b0bc8c2eeeabba1a3f6afdce6aedad737cef11
+vendor/lib/libsurround_3mic_proc.so|832adfad9f3d414234f1b4cfd32b196fe4082bb9
+vendor/lib/soundfx/libqcbassboost.so|0a730813a7335208a5368f48de4790abda536c59
+vendor/lib/soundfx/libqcreverb.so|3cbf222a205e4ccbe812fc69d580abd2237e64d5
+vendor/lib/soundfx/libqcvirt.so|8f60a539fe18de5944d5f1dcd6d0ec5e56b336ea
+vendor/lib64/libacdb-fts.so|1e7df3ee5f12d3dac776c353807676a7076d4cec
+vendor/lib64/libacdbloader.so|f9546940b406716ca365cee738daa12f19e4fb2e
+vendor/lib64/libacdbrtac.so|9dc4172ec422e7e457bfcd3320a336867a03dd92
+vendor/lib64/libadiertac.so|747460c49ce2b1fa40df15c7e51afff46cf8d905
+vendor/lib64/libaudcal.so|8a3587543fe9ec1ad3c3daba5ebd09ac3084cfd7
+vendor/lib64/libaudioalsa.so|4a27694b5a6842609a2f2572476b7af032ec7201
+vendor/lib64/libqtigef.so|79e811fd04172b0afda1229d182014be28a146b2
+vendor/lib64/soundfx/libqcbassboost.so|0b92d65381d9722c579ccfda12f86c7e3fcaedd1
+vendor/lib64/soundfx/libqcvirt.so|815b3a7cd762cdb6f162dde12c866acb23cdd022
 
 # Bluetooth aptX
 vendor/lib/libaptXHD_encoder.so
@@ -13,23 +54,6 @@ vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib64/libaptXHD_encoder.so
 vendor/lib64/libaptX_encoder.so
-
-# Audio
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libaudcal.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
-vendor/lib64/libFlacSwDec.so
 
 # Bluetooth - from daisy - PKQ1.180917.001 V10.0.1.0.PDLMIFJ
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|9178856dc8651b499d1b155825b6115a486ee05e

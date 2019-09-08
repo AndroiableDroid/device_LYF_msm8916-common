@@ -199,9 +199,9 @@ PROTOBUF_SUPPORTED := true
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cm
 
 # SELinux
-include device/qcom/sepolicy-legacy/sepolicy.mk
+#include device/qcom/sepolicy-legacy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
-    $(PLATFORM_PATH)/sepolicy
+    $(PLATFORM_PATH)/sepolicy_tmp
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

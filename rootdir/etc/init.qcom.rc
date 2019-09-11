@@ -46,16 +46,6 @@ on fs
     mount_all /vendor/etc/fstab.qcom
     mkdir /persist/data 0700 system system
 
-    # Start HW service manager early
-    start hwservicemanager
-
-on late-fs
-    # Start services for bootanim
-    start vendor.configstore-hal
-    start surfaceflinger
-    start bootanim
-    start vendor.gralloc-2-0
-
 on post-fs
     # Allow writing to the kernel trace log.
     chmod 0222 /sys/kernel/debug/tracing/trace_marker

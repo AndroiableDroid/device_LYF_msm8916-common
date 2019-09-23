@@ -131,7 +131,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common_system \
     ims_ext_common.xml \
-    libshim_ims
+    libshim_ims \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml
 
 # Init scripts
 PRODUCT_PACKAGES += \

@@ -134,26 +134,6 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|b1c83ea1046e5e356e0b0a74b99d7a3
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|cbc75b554051298020506d85427a1aa70346fbd5
 vendor/lib64/vendor.qti.latency@2.0.so|15e50ce40e210993343406947dd2c959920f40c8
 
-# DPM - from Daisy
-bin/dpmd|1b38829a7faf33d5cbdc195d703f99384c20c9f4
-etc/dpm/dpm.conf|5f19d3984b5291ac956552bda2a84c10c535df0a
-etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
-etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
-etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
-framework/com.qti.dpmframework.jar|2a6ff555ebff148a508fc7ea2fbeaee4b9a2dff6
-framework/dpmapi.jar|66a30e2752b058f6f522721ef6b5efb4c747f7ed
-framework/tcmclient.jar|5f3878f0fe312a429d3a69a2119b34100818292e
--priv-app/dpmserviceapp/dpmserviceapp.apk|a642336052f3e5d70580700e2aebba230a5f663f
-lib64/com.qualcomm.qti.dpm.api@1.0.so|2af88934e4039edaac842576a1861cbdfe39838b
-lib64/libdiag_system.so|e849bb6ca2dea8f080ff017a5728cc90e98ba85c
-lib64/libdpmctmgr.so|595449eff197e8c3bc6f7a4f0242188abe82418f
-lib64/libdpmfdmgr.so|f03869f7bee601182c545e892523d23529439e16
-lib64/libdpmframework.so|9dc137606c1cb73e3ec5a97c954df93e750dd459
-lib64/libdpmtcm.so|1f85ced85f541146756df0b4597a4c51300be63a
-vendor/bin/dpmQmiMgr|31e019a02d25a959a2edfe2c9a04ab958562bb67
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|2af88934e4039edaac842576a1861cbdfe39838b
-vendor/lib64/libdpmqmihal.so|4254cc9f10f6f3d990958c17f4e43d8e9e09c382
-
 # DRM
 bin/qseecomd:vendor/bin/qseecomd
 vendor/lib64/libdrmfs.so
@@ -248,9 +228,9 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 
 # Perf - from TA-1000 - OPR1.170623.026
-lib/vendor.qti.hardware.iop@1.0.so|122ec67a39da6977cdde9d2a5c9e8b370b9ab023
+-lib/vendor.qti.hardware.iop@1.0.so|122ec67a39da6977cdde9d2a5c9e8b370b9ab023
 lib/vendor.qti.hardware.perf@1.0.so|86a267b582710c9ff653a16bd0b292327dc64ead
-lib64/vendor.qti.hardware.iop@1.0.so|8f6115594d941e1b356f29c8e79c97bbc060d155
+-lib64/vendor.qti.hardware.iop@1.0.so|8f6115594d941e1b356f29c8e79c97bbc060d155
 lib64/vendor.qti.hardware.perf@1.0.so|3ac7bcfcb6eed93d50f35b49de05ee77255d92e6
 vendor/bin/hw/vendor.qti.hardware.iop@1.0-service|ca792ae253f3d6b46e3607e3815838e0c989f9e3
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|b8cad5f3bdf49c215f2f6a499710d29a7fa18a0d
@@ -376,8 +356,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-# Radio - from LA.UM.7.5.r1-04000-8x96.0
-framework/qti-telephony-common.jar|9aa88e7f3166d86da217d688b003c2ecf2840acf
+# Radio - from Raphael
+-product/framework/qti-telephony-common.jar|c7a2b3cfd98cf0e80cfb0af3f72e0d2c894725df
 
 # Radio - IMS
 -app/uceShimService/uceShimService.apk
@@ -409,7 +389,7 @@ vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
-# Radio - IMS - from LA.UM.7.5.r1-04000-8x96.0
+# Radio - IMS from LA.UM.7.5.r1-04000-8x96.0
 -priv-app/ims/ims.apk|e601112f50eef846e8672eb03bcbc6e472b927c1
 
 # Thermal - from TA-1000 - OPR1.170623.026
@@ -421,10 +401,10 @@ vendor/lib64/libthermalioctl.so|ca2dca5f433073df781073f449fd7ed73a4e4d3c
 # Time services - from Mi A2 Lite daisy_sprout 9 PKQ1.180917.001/V10.0.3.0.PDLMIXM release-keys
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|5ba8f7261ce833acc77c4619b497ccbf7ea09b4c
-vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
-vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
+-vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
+-vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
 
-# TUI - from vivo 1724 - OPM1.171019.011
+# TUI - from vivo 1724 OPM1.171019.011
 lib/vendor.qti.hardware.tui_comm@1.0.so|b5460afc3e3c6b0f39dfdef6b49a39f537ffa89a
 lib64/vendor.qti.hardware.tui_comm@1.0.so|c627988a2f7a9e05cb5e573e0b70551aa300995f
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|86da521db0433035667beb1ab50c0448e9e6d4e2
@@ -441,7 +421,7 @@ etc/firmware/venus.b04:vendor/firmware/venus.b04
 etc/firmware/venus.mbn:vendor/firmware/venus.mbn
 etc/firmware/venus.mdt:vendor/firmware/venus.mdt
 
-# Widevine DRM - from Daisy
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine|9743c4ecd0fb8773795bcbfbb406f25616c04129
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|458dd241f5f8536eccb57f012b3eba0061736e8e
-vendor/lib64/libwvhidl.so|a3444ac0deb8144a08ba2ed1dad2f2369096c7af
+# Widevine - Upto 1.2
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine|5c2f83943a1c8680cde657e22425f665ab438714
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|4d429d50367b879d45dcd68905f58f6af7fb38d2
+vendor/lib64/libwvhidl.so|ff967a2aab27d75eb858c6a7a269d4090af9f377

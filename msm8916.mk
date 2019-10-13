@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \

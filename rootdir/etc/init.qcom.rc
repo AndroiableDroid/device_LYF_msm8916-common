@@ -81,10 +81,6 @@ on post-fs-data
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
 
-    #create netmgr log dir
-    mkdir /data/vendor/netmgr 0770 radio radio
-    chmod 0770 /data/vendor/netmgr
-
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
@@ -181,19 +177,6 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
 
-    #Create QMUX deamon socket area
-    mkdir /dev/socket/qmux_radio 0770 radio radio
-    chmod 2770 /dev/socket/qmux_radio
-    mkdir /dev/socket/qmux_audio 0770 media audio
-    chmod 2770 /dev/socket/qmux_audio
-    mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
-    chmod 2770 /dev/socket/qmux_bluetooth
-    mkdir /dev/socket/qmux_gps 0770 gps gps
-    chmod 2770 /dev/socket/qmux_gps
-
-    #Create NETMGR daemon socket area
-    mkdir /dev/socket/netmgr 0750 radio radio
-
     # Busy loop to wait for devices booted by devstart_sh just in case device not ready
     exec - root root system -- /system/vendor/bin/init.qcom.devwait.sh
 
@@ -205,12 +188,6 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /dev/ttyHS0
     chmod 0660 /dev/ttyHS0
-
-    # Create QMUX deamon socket area
-    mkdir /dev/socket/qmux_radio 2770 radio radio
-    mkdir /dev/socket/qmux_audio 2770 media audio
-    mkdir /dev/socket/qmux_bluetooth 2770 bluetooth bluetooth
-    mkdir /dev/socket/qmux_gps 2770 gps gps
 
     # Create persist folders
     mkdir /persist/alarm 0770 system system
@@ -301,11 +278,6 @@ service rmt_storage /system/vendor/bin/rmt_storage
     writepid /dev/cpuset/system-background/tasks
     shutdown critical
 
-service tftp_server /vendor/bin/tftp_server
-   class core
-   user root
-   writepid /dev/cpuset/system-background/tasks
-
 service hciattach /system/vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
@@ -320,35 +292,6 @@ on property:vendor.bluetooth.hciattach=true
 on property:vendor.bluetooth.hciattach=false
     setprop vendor.bluetooth.status off
 
-## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user radio
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
-    writepid /dev/cpuset/system-background/tasks
-
-# imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-    class main
-    user radio
-    socket ims_datad stream 0660 system radio
-    group radio wifi inet log diag
-    disabled
-    writepid /dev/cpuset/system-background/tasks
-
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
-
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-   class main
-   user radio
-   group radio diag inet log
-   writepid /dev/cpuset/system-background/tasks
-
-on property:vendor.ims.DATA_DAEMON_STATUS=1
-    restart vendor.ims_rtp_daemon
-
 # FM
 on property:vendor.hw.fm.init=0
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
@@ -356,31 +299,11 @@ on property:vendor.hw.fm.init=0
 on property:vendor.hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/vendor/bin/qmuxd
-    class main
-    user root
-    group radio audio bluetooth gps nfc diag
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
-
-service netmgrd /system/vendor/bin/netmgrd
-    class main
-    user root
-    group root wifi wakelock radio inet oem_2901
-    writepid /dev/cpuset/system-background/tasks
-
-service qti /system/vendor/bin/qti
-    class main
-    user radio
-    group radio oem_2901 diag usb net_admin
-    writepid /dev/cpuset/system-background/tasks
-    disabled
 
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start

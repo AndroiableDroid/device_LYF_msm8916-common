@@ -309,6 +309,8 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 
 ## Radio - from LA.UM.8.2.r1-05100-sdm660.0
+lib/android.hardware.radio.deprecated@1.0.so
+lib64/android.hardware.radio.deprecated@1.0.so
 -product/app/datastatusnotification/datastatusnotification.apk
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 product/etc/permissions/qcrilhook.xml
@@ -381,6 +383,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/radio/qcril_database/qcril.db
 
+#IMS
 -product/app/imssettings/imssettings.apk
 -product/app/uceShimService/uceShimService.apk
 product/lib64/lib-imscamera.so

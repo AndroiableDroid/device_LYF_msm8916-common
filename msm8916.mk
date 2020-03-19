@@ -233,12 +233,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
+
 # Radio
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
+    android.hardware.radio@1.4 \
+    android.hardware.radio@1.2 \
+    android.hardware.radio.config@1.0 \
+    android.hardware.secure_element@1.0 \
+    rild \
     librmnetctl \
-    libtinyxml \
-    libxml2
+    libxml2 \
+    libprotobuf-cpp-full
 
 # Recovery
 PRODUCT_PACKAGES += \

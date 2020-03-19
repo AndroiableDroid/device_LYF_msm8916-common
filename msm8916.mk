@@ -323,5 +323,45 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.cyanogen_8916
 
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    DEVICE_PROVISIONED=1 \
+    persist.data.df.agg.dl_pkt=10 \
+    persist.data.df.agg.dl_size=4096 \
+    persist.data.df.dev_name=rmnet_usb0 \
+    persist.data.df.dl_mode=5 \
+    persist.data.df.iwlan_mux=9 \
+    persist.data.df.mux_count=8 \
+    persist.data.df.ul_mode=5 \
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.wda.enable=true \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.aosp_usr_pref_sel=true \
+    persist.radio.add_power_save=1 \
+    persist.radio.VT_CAM_INTERFACE=2 \
+    persist.radio.data_con_rprt=1 \
+    persist.radio.schd.cache=3500 \
+    persist.radio.calls.on.ims=1 \
+    persist.rmnet.data.enable=true \
+    persist.vendor.data.mode=concurrent \
+    persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.atfwd.start=true \
+    persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.data_con_rprt=1 \
+    persist.vendor.radio.data_ltd_sys_ind=1 \
+    persist.vendor.radio.flexmap_type=none \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.sib16_support=1 \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    ril.subscription.types=NV,RUIM \
+    rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
+    ro.telephony.default_network=22,20 \
+    ro.telephony.iwlan_operation_mode=legacy \
+    ro.telephony.use_old_mnc_mcc_format=true \
+    ro.vendor.use_data_netmgrd=true \
+    telephony.lteOnCdmaDevice=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
+
 # inherit from the proprietary version
 $(call inherit-product, vendor/LYF/msm8916-common/msm8916-common-vendor.mk)
